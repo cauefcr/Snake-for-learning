@@ -1,10 +1,12 @@
 #include "game_types.h"
 #include "queue.h"
+#include "menus.h"
 
 typedef struct snake {
     queue* q;
     char direction;
 } snake;
+
 
 block snake_move(field* f, snake* snake) {
     char dir = snake->direction;
@@ -104,6 +106,16 @@ int main() {
     field* f;
     board[1] = width()/2;//each block has 2 chars of width
     board[0] = height()-1;
+    int difficulty = dif_chooser(sleep_time, board);
+
+    switch (difficulty) {
+        case 0:
+            sleep_time += 16000;
+            break;
+        case 2:
+            sleep_time -= 16000;
+            break;
+    }
 
     f = field_new(board[0], board[1]);
     snake* snake = malloc(sizeof(snake));
@@ -149,11 +161,16 @@ int main() {
         }
     }
     int snake_size = queue_len(snake->q) - 2;
-    wprintf(L"you lost the game with %d rats!\n", snake_size);
+    int retry = game_over(sleep_time, board, snake_size);
+    // wprintf(L"you lost the game with %d rats!\n", );
 
     field_free(f);
     queue_free(snake->q);
     free(snake);
     end();
+
+    if (retry == 1)
+        return main();
+    
     return 0;
 }
