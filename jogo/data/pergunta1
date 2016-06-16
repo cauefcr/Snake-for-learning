@@ -1,0 +1,2 @@
+Você tem duas strings, um = “Um” e dois = “Dois”. Qual o resultado da função strcpy(um, dois)? /na) “Um” e “Um”/nb) “Dois e “Dois” /nc) “Um” e “Dois”/nd) “Dois” e “Um”/ne) ‘nulo’ e ‘nulo’
+2

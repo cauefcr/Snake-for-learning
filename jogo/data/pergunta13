@@ -1,0 +1,2 @@
+Complete o código de adicionar elemento a lista unicamente ligada com cabeça e sem rabo: /n  /nvoid adicionar(no* cabeca, int val){/n  no* out = (no*) malloc(sizeof(no)); /n  out->valor = val; /n  out->proximo = cabeca->proximo; /n  cabeca->proximo = ______/n  return; /n}/n  /na) NULL /nb) cabeca->anterior /nc) out->anterior/nd) out/ne) out->proximo
+4

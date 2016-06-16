@@ -1,0 +1,2 @@
+Dado o código abaixo, qual o valor de a?/n int a = 10 == 9 ? 1 : 2;/n  /na) 10 /nb) 9/nc) 1/nd) 2/ne) lixo de memória
+4

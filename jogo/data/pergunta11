@@ -1,0 +1,2 @@
+Dado o código:/nint cont = 1; /nint res = 0;/nint x = 2;/nwhile (cont >= 4) { /n    res = res * x;/n    cont = cont + 1;/n    printf("%d", res);/n} /nprintf("%d", res);/n  /nA saída na tela será: /na) 0/nb) 2,4,8, e 16/nc) 2, 4, 8 e 8/nd) 1/ne) 0, 0, 0 e 0
+1

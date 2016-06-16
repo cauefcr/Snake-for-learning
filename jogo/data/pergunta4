@@ -1,0 +1,2 @@
+Dadas as string a = “abc” e b = “bcd”, qual o resultado de strcat(a,b)?/n  /na) a == “abcbcd” e b == “bcd” /nb) a == “abc” e b == “bcdabc” /nc) a == “abc” e b == “bcd”/nd) a == “abcbcd” e b == “bcdabc”/ne) a == “bcd” e b == “abc”
+1

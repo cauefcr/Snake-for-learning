@@ -1,0 +1,2 @@
+Considerando o código abaixo, quais os valores de a e b para imprimir todos  os valores de v?/nint v[10];/nfor(int i = a; i < b; i++){/n    printf(“%d”,v[i]);/n}/n  /na) a == 1, b == 10/nb) a == 0, b == 10/nc) a == 2, b == 9 /nd) a == 1, b == 9 /ne) a == 0, b == 9
+5

@@ -1,0 +1,2 @@
+Como alocar um vetor de inteiros de tamanho 20 dinamicamente? /n  /na) int* v = malloc(20)*sizeof(int); /nb) int* v = malloc(sizeof(20)); /nc) int* v = malloc(sizeof(int*20)); /nd) int  v = (int *) malloc(sizeof(int)*20); /ne) int *v = (int *) malloc(sizeof(int)*20);
+5

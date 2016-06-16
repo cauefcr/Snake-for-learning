@@ -1,0 +1,2 @@
+Dado o código a seguir, qual o valor impresso?/n  int a = 3;/n  int *p = &a;/n  *p = 2; /n  printf(“%d”,a); /na) lixo de memória (algo sem sentido) /nb) endereço da variável a;/nc) 2/nd) 3/ne) 4
+3

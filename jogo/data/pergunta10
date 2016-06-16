@@ -1,0 +1,2 @@
+Algoritmos têm estruturas de controle de três tipos: sequencial, condicional e de repetição. /nstring nome /nint num /nnome = "José" /nnum = 0 /nif (nome == "José"){ /n    num = (num+1) /n} /nprintf("Quantidade de João encontrados: %d",num)/n  /nEste trecho de pseudocódigo possui estrutura(s):/na) De um tipo: sequencial /nb) De um tipo: condicional/nc) De um tipo: repetição/nd) De dois tipos: sequencial e condicional/ne) De dois tipos: sequencial e repetição
+4

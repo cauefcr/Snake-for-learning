@@ -1,0 +1,2 @@
+Como se deve alocar uma matriz nxm?/n  /na) int **mat = (int**) malloc(sizeof(int*)*n);/n   for(int i = 0; i < n; i++){/n     mat[i] = (int*) malloc(sizeof(int)*m); /n   }/nb) int mat[][] = malloc(sizeof(int)*n*m); /nc) int **mat = (int**) malloc(sizeof(int**)*n*m); /nd) int **mat = (int**) malloc(sizeof(int*)*n)*m;/ne) int **mat = (int**) malloc(sizeof(int*)*m);/n   for(int i = 0; i < n; i++){/n       mat = (int*) malloc(sizeof(int)*m);/n   }
+1

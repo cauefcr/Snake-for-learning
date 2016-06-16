@@ -1,0 +1,2 @@
+O código a seguir limpa corretamente uma lista ligada com cabeça?/n  /nfree(lista);/n  /na) Não, ele limpou o ultimo nó/nb) Sim, ele limpa automaticamente todos os nós. /nc) Não, ele esquece de limpar os campos da estrutura. /nd) Não, ele limpa só o primeiro nó/ne) Não, ele só limpa a cabeça
+4

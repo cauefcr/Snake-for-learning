@@ -5,7 +5,7 @@
 //    printf("\033[%d;%dH",x,y);
 // }
 
-int kbhit() {
+int kbhit() {//função para ver se alguma tecla foi apertada
     struct timeval tv;
     fd_set fds;
     tv.tv_sec = 0;
@@ -17,7 +17,7 @@ int kbhit() {
 }
 
 void nonblock(int state) {  // set terminal to and from non-blocking
-    struct termios ttystate;
+    struct termios ttystate; // muda do modo normal, precisando dar enter pra pegar a tecla, pra não precisando
 
     // get the terminal state
     tcgetattr(STDIN_FILENO, &ttystate);
@@ -36,36 +36,38 @@ void nonblock(int state) {  // set terminal to and from non-blocking
 }
 
 unsigned int input() {
-    if (kbhit()) {
-        return (unsigned int)fgetc(stdin);
-    } else {
+    if (kbhit()) {//se alguma tecla for apertada
+        return (unsigned int)fgetc(stdin); //retorne tal tecla
+    } else {//caso contrario retorne vazio
         return 0;
     }
 }
 
-struct timespec wt[] = {{0, 0}};
+struct timespec wt[] = {{0, 0}}; //a struct global que vai ser utilizada para dar a pausa
 
-void std_sleep(int waitTime) {
+void std_sleep(int waitTime) { //usleep via nanosleep
     wt[0].tv_nsec = waitTime * 1000;
     nanosleep(wt, NULL);
 }
 
-struct winsize w;
+struct winsize w; // detalhes do tamanho do terminal
 
-void start() {
+void start() { //roda funções especificas para se ver o tamanho do terminal e iniciar o modo async
     nonblock(1);  // STDOUT_FILENO is 0, usually
     ioctl(STDOUT_FILENO, TIOCGWINSZ, &w);
     return;
 }
-void end() {
+
+void end() { // volta o terminal ao modo anterior
     nonblock(0);
     return;
 }
 
-int width() {
+int width() { //retorna a largura do terminal
     return w.ws_col;
 }
-int height() {
+
+int height() { //retorna a altura do terminal
     // ioctl(STDOUT_FILENO,TIOCGWINSZ,&w);
     return w.ws_row;
 }
