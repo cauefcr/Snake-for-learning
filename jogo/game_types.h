@@ -33,7 +33,7 @@
 #define cell(i,j) ->m[i][j]
 //"sprites"
 
-#ifdef _WIN32 //sorry windows, but you're bad at this
+#ifdef _WIN32 //sorry windows, but you're shit at this
 #define BG 			(L' ')
 #define top_u  		(L"══")//("==")
 #define top_d  		(L"══")//("==")
@@ -67,7 +67,8 @@
 #define snake_left 	(L"ᑒ⠿")//("<\%")
 #define snake_right (L"⠿ᑣ")//("\%>")
 #define snake_body 	(L"⠿⠿")//("\%\%")
-#define food 		(L"හ୭")//(":B")
+// #define food 		(L"හ୭")//(":B")
+wchar_t food[][2] = {{L'A',L')'},{L'B',L')'},{L'C',L')'},{L'D',L')'},{L'E',L')'}};
 
 #endif
 
@@ -171,4 +172,29 @@ void field_free(field* f){
 	}
 	free(f->m);
 	return;
+}
+
+typedef struct question{
+   wchar_t text[500];
+   char answer;
+}question;
+
+question read_question(const char* filename){
+   FILE* q_file = fopen(filename,"r");
+   wchar_t tmp[500];
+   question q;
+   fgetws(tmp,500,q_file);
+   for(int i = 0,j = 0; i < 500 && tmp[i]; i++,j++){
+      q.text[j] = tmp[i];
+      if(tmp[i] == L'\\' && tmp[i+1] == L'n'){
+         i++;
+         q.text[j] = L'\n';
+      }
+      if(!(tmp[i+1])){
+        q.text[j] = L'\0';
+      }
+   }
+   fgetws(tmp,500,q_file);
+   q.answer = tmp[0]-L'0';
+   return q;
 }
